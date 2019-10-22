@@ -29,17 +29,18 @@ column1 = dbc.Col(
         dcc.Markdown(
             """
         
-            ## Value Proposition
+            ## In a tennis match, who would we predict to win?
 
-            Emphasize how the app will benefit users. Don't emphasize the underlying technology.
+            Ever wonder who has the better chance of winning a tennis match?
 
-            ✅ RUN is a running app that adapts to your fitness levels and designs personalized workouts to help you improve your running.
+            Are Roger Federer and Rafael Nadal equally likely to win against eachother?
 
-            ❌ RUN is the only intelligent running app that uses sophisticated deep neural net machine learning to make your run smarter because we believe in ML driven workouts.
+            Use this app to see the predicted outcomes. The biggest predictors of victory might not be what you would have guessed. 
 
+            
             """
         ),
-        dcc.Link(dbc.Button('Call To Action', color='primary'), href='/predictions')
+        dcc.Link(dbc.Button('Make Preictions', color='primary'), href='/predictions')
     ],
     md=4,
 )
