@@ -16,12 +16,14 @@ column1 = dbc.Col(
         dcc.Markdown('## Match up', className='MB-5'),
         dcc.Markdown('#### Player A'), 
         dcc.Input(
+            id='Player_A',
             placeholder="Enter a player's name...",
             type='text',
             value='',
         ),
         dcc.Markdown('#### Player B', className='mb-5'), 
         dcc.Input(
+            id='Player B',
             placeholder="Enter a player's name...",
             type='text',
             value=''
@@ -29,6 +31,7 @@ column1 = dbc.Col(
         dcc.Markdown('## Break Points Faced', className='mb-5'), 
         dcc.Markdown('#### Player A'),
         dcc.Slider(
+            id='Player_A_bpFaced',
             min=0,
             max=20,
             step=1,
@@ -37,6 +40,7 @@ column1 = dbc.Col(
         dcc.Markdown('## Break Points Faced', className='mb-5'), 
         dcc.Markdown('#### Player B'),
         dcc.Slider(
+            id='Player_B_bpFaced',
             min=0,
             max=20,
             step=1,
@@ -45,6 +49,7 @@ column1 = dbc.Col(
         dcc.Markdown('## Break Points Saved', className='mb-5'), 
         dcc.Markdown('#### Player A'),
         dcc.Slider(
+            id='Player_A_bpSaved',
             min=0,
             max=20,
             step=1,
@@ -53,6 +58,7 @@ column1 = dbc.Col(
         dcc.Markdown('## Break Points Saved', className='mb-5'), 
         dcc.Markdown('#### Player B'),
         dcc.Slider(
+            id='Player_B_bpSaved',
             min=0,
             max=20,
             step=1,
@@ -65,7 +71,7 @@ column1 = dbc.Col(
      
 column2 = dbc.Col(
     [
-        html.H2('Expected Winner', className='mb-5'), 
+        html.H2('Predictions', className='mb-5'), 
         html.Div(id='prediction-content', className='lead')
     ]
 )
@@ -82,7 +88,9 @@ layout = dbc.Row([column1, column2])
     Input('Player_A_bpSaved', 'value'),
     Input('Player_B_bpSaved', 'value')],
 )
+
 def predict(Player_A, Player_B, Player_A_bpFaced, Player_B_bpFaced, Player_A_bpSaved, Player_B_bpSaved):
+    # print((Player_A, Player_B, Player_A_bpFaced, Player_B_bpFaced, Player_A_bpSaved, Player_B_bpSaved))
     df = pd.DataFrame(
         columns = ['Player_A', 'Player_B', 'Player_A_bpFaced', 
              'Player_B_bpFaced','Player_A_bpSaved', 'Player_B_bpSaved'],
