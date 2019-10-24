@@ -73,12 +73,15 @@ column2 = dbc.Col(
 layout = dbc.Row([column1, column2])
 
 @app.callback(
-    Output('prediction-content', 'children'),
-    [Input('Player_A', 'value'), Input('Player_B', 'value'),
-    Input('Player_A_bpFaced', 'value'), Input('Player_B_bpFaced', 'value'),
-    Input('Player_A_bpSaved', 'value'), Input('Player_B_bpSaved', 'value')],
+    Output('prediction-content', 'value'),
+    [
+    Input('Player_A', 'value'), 
+    Input('Player_B', 'value'),
+    Input('Player_A_bpFaced', 'value'),
+    Input('Player_B_bpFaced', 'value'),
+    Input('Player_A_bpSaved', 'value'),
+    Input('Player_B_bpSaved', 'value')],
 )
-
 def predict(Player_A, Player_B, Player_A_bpFaced, Player_B_bpFaced, Player_A_bpSaved, Player_B_bpSaved):
     df = pd.DataFrame(
         columns = ['Player_A', 'Player_B', 'Player_A_bpFaced', 
