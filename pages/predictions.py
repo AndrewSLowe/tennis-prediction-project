@@ -20,49 +20,56 @@ column1 = dbc.Col(
             placeholder="Enter a player's name...",
             type='text',
             value='',
+            className = 'mb-3',
+
         ),
-        dcc.Markdown('#### Player B', className='mb-5'), 
+        dcc.Markdown('#### Player B'), 
         dcc.Input(
             id='Player_B',
             placeholder="Enter a player's name...",
             type='text',
-            value=''
+            value='',
+            className = 'mb-3'
         ), 
-        dcc.Markdown('## Break Points Faced', className='mb-5'), 
-        dcc.Markdown('#### Player A'),
+        dcc.Markdown('#### Player A Break Point Faced'),
         dcc.Slider(
             id='Player_A_bpFaced',
             min=0,
             max=20,
             step=1,
             value=3,
+            className = 'mb-3'
+
         ),  
-        dcc.Markdown('## Break Points Faced', className='mb-5'), 
-        dcc.Markdown('#### Player B'),
+        dcc.Markdown('#### Player B Break Points Faced'),
         dcc.Slider(
             id='Player_B_bpFaced',
             min=0,
             max=20,
             step=1,
             value=3,
+            className = 'mb-3'
+
         ),
-        dcc.Markdown('## Break Points Saved', className='mb-5'), 
-        dcc.Markdown('#### Player A'),
+        dcc.Markdown('#### Player A Break Points Saved'),
         dcc.Slider(
             id='Player_A_bpSaved',
             min=0,
             max=20,
             step=1,
             value=3,
+            className = 'mb-3'
+
         ),  
-        dcc.Markdown('## Break Points Saved', className='mb-5'), 
-        dcc.Markdown('#### Player B'),
+        dcc.Markdown('#### Player B Break Points Saved'),
         dcc.Slider(
             id='Player_B_bpSaved',
             min=0,
             max=20,
             step=1,
             value=3,
+            className = 'mb-3'
+
         ),  
 
     ],
@@ -79,7 +86,7 @@ column2 = dbc.Col(
 layout = dbc.Row([column1, column2])
 
 @app.callback(
-    Output('prediction-content', 'value'),
+    Output('prediction-content', 'children'),
     [
     Input('Player_A', 'value'), 
     Input('Player_B', 'value'),
