@@ -23,7 +23,7 @@ column1 = dbc.Col(
         ),
         dcc.Markdown('#### Player B', className='mb-5'), 
         dcc.Input(
-            id='Player B',
+            id='Player_B',
             placeholder="Enter a player's name...",
             type='text',
             value=''
